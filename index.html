@@ -538,23 +538,23 @@ strong, b {
       <div class="stars"></div>
       <div class="container">
           <h1>Clara - MD</h1>
-          <div class="slogan">Your Kawaii Assistant for Whatsapp Tools ✨</div>
+          <div class="slogan">Whatsapp Bot & Free APIs ✨</div>
           <div class="button-container" role="navigation" aria-label="Main navigation">
-              <a href="https://wa.me/6285783108035?text=.menu" class="button" aria-label="View Commands">
+              <a href="https://api.clara-web.site" class="button" aria-label="View Commands">
                   <img src="command.png" alt="Commands Icon" loading="lazy">
-                  <span>Get Started</span>
+                  <span>Documentation</span>
               </a>
-              <a href="https://api.clara-web.site" class="button" aria-label="View Features">
-                  <img src="Feature.png" alt="Features Icon" loading="lazy">
-                  <span>Free APIs</span>
+              <a href="https://wa.me/6285783108035?text=.menu" class="button" aria-label="View Features">
+                  <img src="feature.png" alt="Features Icon" loading="lazy">
+                  <span>Get Started</span>
               </a>
               <a href="https://chat.whatsapp.com/EtgDg8rnba50aMh8NbysAd" class="button" aria-label="Invite Mikuni">
                   <img src="invite.png" alt="Invite Icon" loading="lazy">
-                  <span>Official Group</span>
+                  <span>Mobile Legends Check</span>
               </a>
               <a href="https://whatsapp.com/channel/0029Vb6JEVX5a24AhtxRsQ1b" class="button" aria-label="Get Support">
                   <img src="support.png" alt="Support Icon" loading="lazy">
-                  <span>Information Channel</span>
+                  <span>Support Channel</span>
               </a>
           </div>
       </div>
@@ -696,39 +696,56 @@ document.querySelectorAll('.magic-card').forEach(card => {
 
   <div class="stats-section">
       <div class="stat-counter">
-          <span class="count" data-target="TBA">TBA</span>
+          <span class="count" data-target="20">TBA</span>
           <span class="label">Servers</span>
       </div>
       <div class="stat-counter">
-          <span class="count" data-target="TBA">TBA</span>
+          <span class="count" data-target="10000">TBA</span>
           <span class="label">Users</span>
       </div>
       <div class="stat-counter">
-          <span class="count" data-target="TBA">TBA</span>
+          <span class="count" data-target="100000">TBA</span>
           <span class="label">Commands Used</span>
       </div>
   </div>
+  <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const counters = document.querySelectorAll('.count');
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                let count = 0;
+                const updateCount = () => {
+                    if (count < target) {
+                        count++;
+                        counter.textContent = count;
+                        setTimeout(updateCount, 50); // Adjust speed here
+                    } else {
+                        counter.textContent = target; // Ensure it ends at the target
+                    }
+                };
+                updateCount();
+            });
+        });
+  </script>
 
   <section class="team-section">
-      <h2 class="kawaii-title">✨ Our Amazing Team ✨</h2>
+      <h2 class="kawaii-title">✨ Contributors ✨</h2>
       <div class="team-grid">
           <div class="team-card">
-              <img src="owner.png" alt="Owner" class="team-avatar">
-              <h3>Arane Miku</h3>
-              <span class="team-role">Owner & Visionary</span>
+              <img src="https://static.promediateknologi.id/crop/0x129:1440x902/750x500/webp/photo/p1/844/2025/01/08/1000015577-2830891993.jpg" alt="Owner" class="team-avatar">
+              <h3>Zeltoria</h3>
+              <span class="team-role">Clara Dev</span>
               <div class="social-links">
-                  <a href="#" class="social-icon">🌐</a>
-                  <a href="#" class="social-icon">💌</a>
-              </div>
+                  <a href="https://github.com/Zeltoria" class="social-icon">🌐</a>
+           </div>
           </div>
           <div class="team-card">
-              <img src="dev.png" alt="Developer" class="team-avatar">
-              <h3>Saizuo</h3>
-              <span class="team-role">Lead Developer</span>
+              <img src="https://cdn1-production-images-kly.akamaized.net/NKU5cbFBOWpqtLc3vMhr_tMqauA=/800x800/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/4625469/original/064247900_1698333191-freya_body_lipt6.jpg" alt="Developer" class="team-avatar">
+              <h3>Firdaus</h3>
+              <span class="team-role">Lenathea Dev</span>
               <div class="social-links">
-                  <a href="#" class="social-icon">💻</a>
-                  <a href="#" class="social-icon">💌</a>
-              </div>
+                  <a href="https://github.com/leanathea" class="social-icon">🌐</a>
+           </div>
           </div>
           <div class="team-card">
               <img src="artist.png" alt="Artist" class="team-avatar">
