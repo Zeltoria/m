@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'Sono-Bold';
+    src: url('../Sono-Bold.woff2') format('woff2');
+}
+
+.sparkle {
+    position: absolute;
+    pointer-events: none;
+    background: linear-gradient(45deg, #a8d8ff, #ffb7d1);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: sparkleAnimation 0.8s ease-in-out forwards;
+}
+
+/* You can also add a shimmering effect to make it even more magical */
+@keyframes sparkleAnimation {
+    0% { 
+        transform: scale(0) rotate(0deg); 
+        opacity: 1;
+        background: linear-gradient(45deg, #a8d8ff, #ffb7d1);
+    }
+    50% {
+        background: linear-gradient(225deg, #a8d8ff, #ffb7d1);
+    }
+    100% { 
+        transform: scale(1) rotate(180deg); 
+        opacity: 0;
+        background: linear-gradient(45deg, #a8d8ff, #ffb7d1);
+    }
+}

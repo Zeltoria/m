@@ -1,0 +1,802 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Mikuni Bot ✨</title>
+      <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="preview.png">
+<link rel="apple-touch-icon" href="preview.png">
+<link rel="shortcut icon" type="image/png" href="preview.png">
+<meta name="description" content="Mikuni - Your Kawaii Discord Bot Companion with amazing features and cute interactions">
+<meta name="keywords" content="Discord bot, Mikuni, kawaii, anime, cute bot">
+<meta property="og:title" content="Mikuni Bot ✨">
+<meta property="og:description" content="Your Kawaii Companion for Discord Adventures">
+<meta property="og:image" content="preview.png">
+<link rel="preload" href="Funny & Cute.otf" as="font" type="font/otf" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<meta name="theme-color" content="#41749e">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="preview.png">
+      <style>
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+}
+
+p, span, div {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+}
+
+strong, b {
+    font-weight: 600;
+}
+
+          @font-face {
+              font-family: 'FunnyAndCute';
+              src: url('Funny & Cute.otf') format('opentype');
+          }
+          body {
+    font-family: 'Quicksand', sans-serif;
+}
+
+@font-face {
+    font-family: 'Sono-Bold';
+    src: url('../Sono-Bold.woff2') format('woff2');
+}
+
+
+
+.sparkle-emoji {
+    color: inherit;
+    filter: 
+        hue-rotate(45deg) 
+        saturate(150%) 
+        drop-shadow(0 0 2px #a8d8ff)
+        drop-shadow(0 0 2px #ffb7d1);
+    animation: sparkle-colors 2s infinite;
+}
+
+@keyframes sparkle-colors {
+    0% { filter: hue-rotate(0deg) saturate(150%) drop-shadow(0 0 2px #a8d8ff); }
+    50% { filter: hue-rotate(45deg) saturate(150%) drop-shadow(0 0 2px #ffb7d1); }
+    100% { filter: hue-rotate(0deg) saturate(150%) drop-shadow(0 0 2px #a8d8ff); }
+}
+
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+          body {
+              margin: 0;
+              padding: 0;
+              background: linear-gradient(45deg, #ffe6ea, #e6f0ff);
+              font-family: 'Arial', sans-serif;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              min-height: 100vh;
+              overflow-x: hidden;
+              position: relative;
+          }
+
+          .cloud {
+              position: absolute;
+              background: rgba(255, 255, 255, 0.8);
+              border-radius: 50px;
+              animation: float linear infinite;
+              z-index: 1;
+          }
+
+          .cloud::before,
+          .cloud::after {
+              content: '';
+              position: absolute;
+              background: rgba(255, 255, 255, 0.8);
+              border-radius: 50%;
+          }
+
+          .cloud-1 {
+              width: 100px;
+              height: 40px;
+              top: 20%;
+              animation-duration: 30s;
+          }
+
+          .cloud-1::before {
+              width: 50px;
+              height: 50px;
+              top: -20px;
+              left: 15px;
+          }
+
+          .cloud-1::after {
+              width: 40px;
+              height: 40px;
+              top: -15px;
+              left: 45px;
+          }
+
+          .cloud-2 {
+              width: 120px;
+              height: 45px;
+              top: 40%;
+              animation-duration: 35s;
+              animation-delay: -15s;
+          }
+
+          .cloud-2::before {
+              width: 55px;
+              height: 55px;
+              top: -25px;
+              left: 20px;
+          }
+
+          .cloud-2::after {
+              width: 45px;
+              height: 45px;
+              top: -18px;
+              left: 50px;
+          }
+
+          .cloud-3 {
+              width: 90px;
+              height: 35px;
+              top: 60%;
+              animation-duration: 25s;
+              animation-delay: -5s;
+          }
+
+          .cloud-3::before {
+              width: 45px;
+              height: 45px;
+              top: -18px;
+              left: 12px;
+          }
+
+          .cloud-3::after {
+              width: 35px;
+              height: 35px;
+              top: -12px;
+              left: 40px;
+          }
+
+          @keyframes float {
+              from {
+                  transform: translateX(-200px);
+                  left: -200px;
+              }
+              to {
+                  transform: translateX(calc(100vw + 200px));
+                  left: 100%;
+              }
+          }
+
+          .stars {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              pointer-events: none;
+              animation: twinkle 1.5s infinite alternate;
+          }
+
+          @keyframes twinkle {
+              0% { opacity: 0.3; }
+              100% { opacity: 0.7; }
+          }
+
+          .container {
+              text-align: center;
+              padding: 2rem;
+              max-width: 1200px;
+              position: relative;
+              z-index: 2;
+              background: rgba(255, 255, 255, 0.3);
+              backdrop-filter: blur(5px);
+              border-radius: 20px;
+              box-shadow: 0 8px 32px rgba(65, 116, 158, 0.1);
+              margin: 2rem;
+          }
+
+          h1 {
+              font-family: 'FunnyAndCute', cursive;
+              font-size: 4rem;
+              color: #41749e;
+              text-shadow: 3px 3px 0px #ffffff;
+              margin-bottom: 0.5rem;
+              animation: wobble 2s ease-in-out infinite;
+          }
+
+          .slogan {
+    font-family: 'Sono-Bold', cursive;
+    font-size: 1.3rem;
+    color: #41749e;
+    opacity: 0.8;
+    margin-bottom: 2rem;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+          .button-container {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+              gap: 2rem;
+              margin-top: 3rem;
+          }
+            .button {
+                position: relative;
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                background: rgba(255, 255, 255, 0.8);
+                border: 3px solid rgba(255, 255, 255, 0.9);
+                text-decoration: none;
+                padding: 1rem;
+                border-radius: 15px;
+            }
+
+            .button:hover {
+                transform: translateY(-8px) scale(1.05);
+                background: rgba(255, 255, 255, 0.95);
+                box-shadow: 0 15px 30px rgba(65, 116, 158, 0.2);
+            }
+
+            .button img {
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                border: 4px solid #ffffff;
+                box-shadow: 0 4px 15px rgba(65, 116, 158, 0.3);
+                transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            }
+
+            .button:hover img {
+                transform: rotate(10deg) scale(1.1);
+            }
+          .button span {
+              display: block;
+              margin-top: 1rem;
+              color: #41749e;
+              font-size: 1.2rem;
+              font-weight: bold;
+          }
+
+          @keyframes wobble {
+              0%, 100% { transform: rotate(-3deg); }
+              50% { transform: rotate(3deg); }
+          }
+
+          @keyframes bounce {
+              0%, 100% { transform: translateY(0); }
+              50% { transform: translateY(-10px); }
+          }
+
+          /* Cute Preloader */
+          .preloader {
+              position: fixed;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background: linear-gradient(45deg, #ffe6ea, #e6f0ff);
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              z-index: 9999;
+              transition: opacity 0.5s ease-out;
+          }
+            .loading-cat {
+                width: 120px;
+                height: 120px;
+                background: linear-gradient(45deg, #fff, #ffe6ea);
+                border-radius: 50%;
+                position: relative;
+                animation: catBounce 1.2s ease-in-out infinite alternate;
+                box-shadow: 0 10px 25px rgba(65, 116, 158, 0.2);
+            }
+
+            .loading-cat::before {
+                content: '(^･ω･^)';
+                position: absolute;
+                font-size: 24px;
+                color: #41749e;
+                width: 100%;
+                text-align: center;
+                top: 35%;
+            }
+
+            @keyframes catBounce {
+                0% { transform: translateY(0) scale(1); }
+                100% { transform: translateY(-20px) scale(1.1); }
+            }
+          .loading-text {
+              margin-top: 20px;
+              font-family: 'FunnyAndCute', cursive;
+              color: #41749e;
+              font-size: 1.5rem;
+          }
+
+          /* Floating Elements */
+          .floating-emoji {
+              position: fixed;
+              font-size: 24px;
+              pointer-events: none;
+              animation: float-up 5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+              filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+              z-index: 3;
+          }
+
+          @keyframes float-up {
+              0% { transform: translateY(0) rotate(0deg) scale(1); opacity: 1; }
+              50% { transform: translateY(-50vh) rotate(180deg) scale(1.5); opacity: 0.8; }
+              100% { transform: translateY(-100vh) rotate(360deg) scale(1); opacity: 0; }
+          }
+          /* Interactive Cursor */
+          .custom-cursor {
+              width: 20px;
+              height: 20px;
+              background: rgba(65, 116, 158, 0.3);
+              border-radius: 50%;
+              position: fixed;
+              pointer-events: none;
+              z-index: 9999;
+              mix-blend-mode: difference;
+              transition: transform 0.1s ease;
+          }
+
+          /* Enhanced Button Styles */
+          .button {
+              transform-style: preserve-3d;
+              perspective: 1000px;
+          }
+
+          .button:hover {
+              transform: translateY(-5px) scale(1.05) rotateY(10deg);
+          }
+            .button::after {
+                position: absolute;
+                top: -10px;
+                right: -10px;
+                background: linear-gradient(45deg, #ff6b88, #ff99ac);
+                color: white;
+                padding: 8px;
+                border-radius: 50%;
+                font-size: 14px;
+                opacity: 0;
+                transform: scale(0) rotate(-45deg);
+                transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                box-shadow: 0 3px 10px rgba(255, 107, 136, 0.3);
+            }
+
+            .button:hover::after {
+                opacity: 1;
+                transform: scale(1.2) rotate(0deg);
+            }
+          /* Music Note Animation */
+          .music-notes {
+              position: absolute;
+              font-size: 20px;
+              color: #41749e;
+              opacity: 0;
+              animation: float-notes 2s linear infinite;
+          }
+
+          .features-section {
+    margin-top: 4rem;
+    padding: 2rem;
+}
+
+.kawaii-title {
+    font-family: 'FunnyAndCute', cursive;
+    color: #41749e;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    animation: bounce 2s infinite;
+}
+
+.feature-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.stats-section {
+    display: flex;
+    justify-content: space-around;
+    margin: 4rem 0;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.stat-counter {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 15px;
+    min-width: 200px;
+}
+
+.count {
+    font-size: 2.5rem;
+    color: #41749e;
+    font-weight: bold;
+    display: block;
+}
+
+.label {
+    font-family: 'FunnyAndCute', cursive;
+    color: #41749e;
+    font-size: 1.2rem;
+}
+
+/* Add to existing styles */
+@media (max-width: 768px) {
+    .container {
+        margin: 1rem;
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 3rem;
+    }
+    
+    .button-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-section {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.kawaii-footer {
+    text-align: center;
+    padding: 15px;
+    background: linear-gradient(45deg, #ffe6ea, #e6f0ff);
+    color: #41749e;
+    font-family: 'FunnyAndCute', cursive;
+    font-size: 1.2rem;
+    margin-top: 3rem;
+    box-shadow: 0 -5px 15px rgba(65, 116, 158, 0.1);
+}
+
+.kawaii-footer span {
+    display: inline-block;
+    margin: 0 5px;
+    transform-origin: center;
+    animation: sparkle 1.5s infinite;
+}
+
+@keyframes sparkle {
+    0% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.2) rotate(5deg); }
+    100% { transform: scale(1) rotate(0deg); }
+}
+
+.sparkle {
+    position: absolute;
+    pointer-events: none;
+    background: white;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: sparkleAnimation 0.8s ease-in-out forwards;
+}
+
+@keyframes sparkleAnimation {
+    0% { transform: scale(0) rotate(0deg); opacity: 1; }
+    100% { transform: scale(1) rotate(180deg); opacity: 0; }
+}
+
+
+          @keyframes float-notes {
+              0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+              50% { opacity: 1; }
+              100% { transform: translateY(-50px) rotate(20deg); opacity: 0; }
+          }
+      </style>
+  </head>
+  <body>
+      <!-- Preloader -->
+      <div class="preloader">
+          <div class="loading-cat"></div>
+          <div class="loading-text">Loading Cuteness...</div>
+      </div>
+
+      <!-- Custom Cursor -->
+      <div class="custom-cursor"></div>
+
+      <div class="cloud cloud-1"></div>
+      <div class="cloud cloud-2"></div>
+      <div class="cloud cloud-3"></div>
+      <div class="stars"></div>
+      <div class="container">
+          <h1>Mikuni</h1>
+          <div class="slogan">Your Kawaii Companion for Discord Adventures ✨</div>
+          <div class="button-container" role="navigation" aria-label="Main navigation">
+              <a href="#commands" class="button" aria-label="View Commands">
+                  <img src="command.png" alt="Commands Icon" loading="lazy">
+                  <span>Commands</span>
+              </a>
+              <a href="#features" class="button" aria-label="View Features">
+                  <img src="Feature.png" alt="Features Icon" loading="lazy">
+                  <span>Status</span>
+              </a>
+              <a href="https://discord.com/oauth2/authorize?client_id=908540588566122506&permissions=8&scope=bot%20applications.commands" class="button" aria-label="Invite Mikuni">
+                  <img src="invite.png" alt="Invite Icon" loading="lazy">
+                  <span>Invite Mikuni</span>
+              </a>
+              <a href="https://discord.gg/mikuni" class="button" aria-label="Get Support">
+                  <img src="support.png" alt="Support Icon" loading="lazy">
+                  <span>Support</span>
+              </a>
+          </div>
+      </div>
+        <script>
+
+            
+            function createStars() {
+                const starsContainer = document.querySelector('.stars');
+                for (let i = 0; i < 50; i++) {
+                    const star = document.createElement('div');
+                    star.style.position = 'absolute';
+                    star.style.left = `${Math.random() * 100}%`;
+                    star.style.top = `${Math.random() * 100}%`;
+                    star.style.width = '2px';
+                    star.style.height = '2px';
+                    star.style.background = '#fff';
+                    star.style.borderRadius = '50%';
+                    starsContainer.appendChild(star);
+                }
+            }
+            createStars();
+
+            // Preloader
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    document.querySelector('.preloader').style.opacity = '0';
+                    setTimeout(() => {
+                        document.querySelector('.preloader').style.display = 'none';
+                    }, 500);
+                }, 1500);
+            });
+
+            // Custom Cursor
+            document.addEventListener('mousemove', (e) => {
+                const cursor = document.querySelector('.custom-cursor');
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            });
+
+            // Floating Emojis on Click
+            document.addEventListener('click', (e) => {
+                const emojis = ['✨', '♥', '🌸', '🎵', '🌟', '🍡'];
+                const emoji = document.createElement('span');
+                emoji.className = 'floating-emoji';
+                emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                emoji.style.left = e.clientX + 'px';
+                emoji.style.top = e.clientY + 'px';
+                document.body.appendChild(emoji);
+                setTimeout(() => emoji.remove(), 4000);
+            });
+
+            // Music Notes around Title
+            function createMusicNote() {
+                const container = document.querySelector('h1');
+                const note = document.createElement('span');
+                note.className = 'music-notes';
+                note.textContent = '♪';
+                note.style.left = Math.random() * 100 + '%';
+                container.appendChild(note);
+                setTimeout(() => note.remove(), 2000);
+            }
+
+            setInterval(createMusicNote, 1000);
+
+            function animateCounters() {
+                const counters = document.querySelectorAll('.count');
+                counters.forEach(counter => {
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    const duration = 2000; // 2 seconds
+                    const increment = target / (duration / 16);
+                    let current = 0;
+
+                    const updateCounter = () => {
+                        current += increment;
+                        if (current < target) {
+                            counter.textContent = Math.ceil(current);
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            counter.textContent = target;
+                        }
+                    };
+                    updateCounter();
+                });
+            }
+document.querySelectorAll('.feature-card').forEach(card => {
+    card.addEventListener('mouseover', () => {
+        const emoji = document.createElement('span');
+        emoji.className = 'floating-emoji';
+        emoji.textContent = card.querySelector('.card-icon').textContent;
+        emoji.style.left = `${Math.random() * card.offsetWidth + card.offsetLeft}px`;
+        emoji.style.top = `${card.offsetTop}px`;
+        document.body.appendChild(emoji);
+    });
+});
+
+document.querySelectorAll('.portal-link').forEach(link => {
+    link.addEventListener('mouseenter', () => {
+        const sparkle = document.createElement('div');
+        sparkle.className = 'sparkle';
+        sparkle.style.left = Math.random() * 100 + '%';
+        sparkle.style.top = Math.random() * 100 + '%';
+        link.appendChild(sparkle);
+        setTimeout(() => sparkle.remove(), 800);
+    });
+});
+
+document.querySelectorAll('.magic-card').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        card.style.transform = `
+            perspective(1000px)
+            rotateX(${(y - rect.height/2) / 20}deg)
+            rotateY(${(x - rect.width/2) / 20}deg)
+            translateZ(10px)
+        `;
+    });
+    
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'none';
+    });
+});
+
+
+            window.addEventListener('load', () => {
+                animateCounters();
+            });
+        </script>
+    </body>
+  </html>
+    </div>
+</section>
+  <!-- Add before stats section -->
+  <div class="section-heading">
+      <h2 class="kawaii-title">✨ Magical Statistics ✨</h2>
+  </div>
+
+  <div class="stats-section">
+      <div class="stat-counter">
+          <span class="count" data-target="TBA">TBA</span>
+          <span class="label">Servers</span>
+      </div>
+      <div class="stat-counter">
+          <span class="count" data-target="TBA">TBA</span>
+          <span class="label">Users</span>
+      </div>
+      <div class="stat-counter">
+          <span class="count" data-target="TBA">TBA</span>
+          <span class="label">Commands Used</span>
+      </div>
+  </div>
+
+  <section class="team-section">
+      <h2 class="kawaii-title">✨ Our Amazing Team ✨</h2>
+      <div class="team-grid">
+          <div class="team-card">
+              <img src="owner.png" alt="Owner" class="team-avatar">
+              <h3>Arane Miku</h3>
+              <span class="team-role">Owner & Visionary</span>
+              <div class="social-links">
+                  <a href="#" class="social-icon">🌐</a>
+                  <a href="#" class="social-icon">💌</a>
+              </div>
+          </div>
+          <div class="team-card">
+              <img src="dev.png" alt="Developer" class="team-avatar">
+              <h3>Saizuo</h3>
+              <span class="team-role">Lead Developer</span>
+              <div class="social-links">
+                  <a href="#" class="social-icon">💻</a>
+                  <a href="#" class="social-icon">💌</a>
+              </div>
+          </div>
+          <div class="team-card">
+              <img src="artist.png" alt="Artist" class="team-avatar">
+              <h3>Akmal Tachibana </h3>
+              <span class="team-role">Lead Artist</span>
+              <div class="social-links">
+                  <a href="#" class="social-icon">🎨</a>
+                  <a href="#" class="social-icon">💌</a>
+              </div>
+          </div>
+      </div>
+  </section>
+  <footer class="kawaii-footer">
+    <span>✨</span> © 2024 Mikuni Bot <span>🌸</span> All Rights Reserved <span>✨</span>
+</footer>
+
+
+ <style> 
+.team-section {
+    padding: 4rem 2rem;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    margin: 2rem;
+    border-radius: 20px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.team-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+}
+
+.team-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 15px;
+    object-fit: cover;
+    border: 4px solid #ffffff;
+    box-shadow: 0 4px 15px rgba(65, 116, 158, 0.3);
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.team-avatar:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(65, 116, 158, 0.4);
+}
+
+.team-role {
+    color: #41749e;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    display: block;
+}
+
+
+
+</style>

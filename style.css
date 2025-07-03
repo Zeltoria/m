@@ -1,0 +1,473 @@
+/* Font imports */
+@font-face {
+    font-family: 'FunnyAndCute';
+    src: url('Funny & Cute.otf') format('opentype');
+}
+
+/* All existing CSS from the <style> tag in index.html */
+body {
+    font-family: 'Quicksand', sans-serif;
+}
+
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* ... Copy all remaining CSS rules ... */
+@font-face {
+    font-family: 'FunnyAndCute';
+    src: url('Funny & Cute.otf') format('opentype');
+}
+body {
+font-family: 'Quicksand', sans-serif;
+}
+
+@keyframes shimmer {
+0% { background-position: 200% 0; }
+100% { background-position: -200% 0; }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #ffe6ea, #e6f0ff);
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.cloud {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+    animation: float linear infinite;
+    z-index: 1;
+}
+
+.cloud::before,
+.cloud::after {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+}
+
+.cloud-1 {
+    width: 100px;
+    height: 40px;
+    top: 20%;
+    animation-duration: 30s;
+}
+
+.cloud-1::before {
+    width: 50px;
+    height: 50px;
+    top: -20px;
+    left: 15px;
+}
+
+.cloud-1::after {
+    width: 40px;
+    height: 40px;
+    top: -15px;
+    left: 45px;
+}
+
+.cloud-2 {
+    width: 120px;
+    height: 45px;
+    top: 40%;
+    animation-duration: 35s;
+    animation-delay: -15s;
+}
+
+.cloud-2::before {
+    width: 55px;
+    height: 55px;
+    top: -25px;
+    left: 20px;
+}
+
+.cloud-2::after {
+    width: 45px;
+    height: 45px;
+    top: -18px;
+    left: 50px;
+}
+
+.cloud-3 {
+    width: 90px;
+    height: 35px;
+    top: 60%;
+    animation-duration: 25s;
+    animation-delay: -5s;
+}
+
+.cloud-3::before {
+    width: 45px;
+    height: 45px;
+    top: -18px;
+    left: 12px;
+}
+
+.cloud-3::after {
+    width: 35px;
+    height: 35px;
+    top: -12px;
+    left: 40px;
+}
+
+@keyframes float {
+    from {
+        transform: translateX(-200px);
+        left: -200px;
+    }
+    to {
+        transform: translateX(calc(100vw + 200px));
+        left: 100%;
+    }
+}
+
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    animation: twinkle 1.5s infinite alternate;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.3; }
+    100% { opacity: 0.7; }
+}
+
+.container {
+    text-align: center;
+    padding: 2rem;
+    max-width: 1200px;
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(65, 116, 158, 0.1);
+    margin: 2rem;
+}
+
+h1 {
+    font-family: 'FunnyAndCute', cursive;
+    font-size: 4rem;
+    color: #41749e;
+    text-shadow: 3px 3px 0px #ffffff;
+    margin-bottom: 0.5rem;
+    animation: wobble 2s ease-in-out infinite;
+}
+
+.slogan {
+    font-family: 'FunnyAndCute', cursive;
+    font-size: 1.5rem;
+    color: #41749e;
+    opacity: 0.8;
+    margin-bottom: 2rem;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.button-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+  .button {
+      position: relative;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      background: rgba(255, 255, 255, 0.8);
+      border: 3px solid rgba(255, 255, 255, 0.9);
+      text-decoration: none;
+      padding: 1rem;
+      border-radius: 15px;
+  }
+
+  .button:hover {
+      transform: translateY(-8px) scale(1.05);
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 15px 30px rgba(65, 116, 158, 0.2);
+  }
+
+  .button img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid #ffffff;
+      box-shadow: 0 4px 15px rgba(65, 116, 158, 0.3);
+      transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .button:hover img {
+      transform: rotate(10deg) scale(1.1);
+  }
+.button span {
+    display: block;
+    margin-top: 1rem;
+    color: #41749e;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+@keyframes wobble {
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Cute Preloader */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ffe6ea, #e6f0ff);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease-out;
+}
+  .loading-cat {
+      width: 120px;
+      height: 120px;
+      background: linear-gradient(45deg, #fff, #ffe6ea);
+      border-radius: 50%;
+      position: relative;
+      animation: catBounce 1.2s ease-in-out infinite alternate;
+      box-shadow: 0 10px 25px rgba(65, 116, 158, 0.2);
+  }
+
+  .loading-cat::before {
+      content: '(^･ω･^)';
+      position: absolute;
+      font-size: 24px;
+      color: #41749e;
+      width: 100%;
+      text-align: center;
+      top: 35%;
+  }
+
+  @keyframes catBounce {
+      0% { transform: translateY(0) scale(1); }
+      100% { transform: translateY(-20px) scale(1.1); }
+  }
+.loading-text {
+    margin-top: 20px;
+    font-family: 'FunnyAndCute', cursive;
+    color: #41749e;
+    font-size: 1.5rem;
+}
+
+/* Floating Elements */
+.floating-emoji {
+    position: fixed;
+    font-size: 24px;
+    pointer-events: none;
+    animation: float-up 5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    z-index: 3;
+}
+
+@keyframes float-up {
+    0% { transform: translateY(0) rotate(0deg) scale(1); opacity: 1; }
+    50% { transform: translateY(-50vh) rotate(180deg) scale(1.5); opacity: 0.8; }
+    100% { transform: translateY(-100vh) rotate(360deg) scale(1); opacity: 0; }
+}
+/* Interactive Cursor */
+.custom-cursor {
+    width: 20px;
+    height: 20px;
+    background: rgba(65, 116, 158, 0.3);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: transform 0.1s ease;
+}
+
+/* Enhanced Button Styles */
+.button {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.button:hover {
+    transform: translateY(-5px) scale(1.05) rotateY(10deg);
+}
+  .button::after {
+      content: '♥';
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background: linear-gradient(45deg, #ff6b88, #ff99ac);
+      color: white;
+      padding: 8px;
+      border-radius: 50%;
+      font-size: 14px;
+      opacity: 0;
+      transform: scale(0) rotate(-45deg);
+      transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 3px 10px rgba(255, 107, 136, 0.3);
+  }
+
+  .button:hover::after {
+      opacity: 1;
+      transform: scale(1.2) rotate(0deg);
+  }
+/* Music Note Animation */
+.music-notes {
+    position: absolute;
+    font-size: 20px;
+    color: #41749e;
+    opacity: 0;
+    animation: float-notes 2s linear infinite;
+}
+
+.features-section {
+margin-top: 4rem;
+padding: 2rem;
+}
+
+.kawaii-title {
+font-family: 'FunnyAndCute', cursive;
+color: #41749e;
+font-size: 2.5rem;
+text-align: center;
+margin-bottom: 2rem;
+animation: bounce 2s infinite;
+}
+
+.feature-cards {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 2rem;
+padding: 1rem;
+}
+
+.feature-card {
+background: rgba(255, 255, 255, 0.9);
+border-radius: 20px;
+padding: 2rem;
+text-align: center;
+transition: transform 0.3s;
+cursor: pointer;
+}
+
+.feature-card:hover {
+transform: translateY(-10px) scale(1.02);
+}
+
+.card-icon {
+font-size: 3rem;
+margin-bottom: 1rem;
+}
+
+.stats-section {
+display: flex;
+justify-content: space-around;
+margin: 4rem 0;
+flex-wrap: wrap;
+gap: 2rem;
+}
+
+.stat-counter {
+text-align: center;
+background: rgba(255, 255, 255, 0.9);
+padding: 2rem;
+border-radius: 15px;
+min-width: 200px;
+}
+
+.count {
+font-size: 2.5rem;
+color: #41749e;
+font-weight: bold;
+display: block;
+}
+
+.label {
+font-family: 'FunnyAndCute', cursive;
+color: #41749e;
+font-size: 1.2rem;
+}
+
+/* Add to existing styles */
+@media (max-width: 768px) {
+.container {
+margin: 1rem;
+padding: 1rem;
+}
+
+h1 {
+font-size: 3rem;
+}
+
+.button-container {
+grid-template-columns: 1fr;
+}
+
+.stats-section {
+flex-direction: column;
+align-items: center;
+}
+}
+/* Add to existing styles */
+.sparkle {
+position: absolute;
+pointer-events: none;
+background: white;
+border-radius: 50%;
+transform: scale(0);
+animation: sparkleAnimation 0.8s ease-in-out forwards;
+}
+
+@keyframes sparkleAnimation {
+0% { transform: scale(0) rotate(0deg); opacity: 1; }
+100% { transform: scale(1) rotate(180deg); opacity: 0; }
+}
+
+
+@keyframes float-notes {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-50px) rotate(20deg); opacity: 0; }
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    font-family: 'Quicksand', sans-serif;
+    color: #41749e;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+.footer span {
+    display: inline-block;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
